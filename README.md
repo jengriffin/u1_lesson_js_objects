@@ -290,16 +290,16 @@ This is another situation where accessing key-values using square brackets and q
 You can use object properties with conditionals, loops, etc...
 
 ```js
-const obj = {
-  text: 'hi',
-  count: 4
+const planet = {
+  name: 'Saturn',
+  rings: 9
 }
 
-if (obj.text == 'hi') {
-  console.log('ok')
+if (planet.name == 'Saturn') {
+  console.log('Saturn is the 6th planet from the Sun!')
 }
 
-for (let i = 0; i < obj.count; i++) {
+for (let i = 0; i < planet.rings; i++) {
   console.log(i)
 }
 ```
@@ -307,15 +307,15 @@ for (let i = 0; i < obj.count; i++) {
 You can test to see if a property exists on an object:
 
 ```js
-const saturn = {
-  hasRings: true
+const planet = {
+  name: 'Mars'
 }
 
-if (saturn.hasRings) {
+if (planet.name) {
   console.log('This key exists within the object')
 }
 
-if (saturn.isSafe) {
+if (planet.distance) {
   console.log('This key exists within the object')
 } else {
   console.log('This key does not exist within the object')
