@@ -8,25 +8,26 @@ In this lesson, we'll discuss Objects and how they are essential data structures
 
 ## Getting Started
 
-- Fork and Clone
-- cd into this folder
-- touch `objects.js`
+- `fork` and `clone`
+- `cd` into the new directory
+- Use `touch` and create an `objects.js` file
+- Run `code .` to open the directory in VS Code
 
-To run your code, use `node objects.js`
+To run your code, use `node objects.js`...
 
 ## Lesson Objectives
 
 _After this lesson, students will be able to:_
 
 1. Explain the difference between arrays and objects
-1. Store key-value pairs inside an object
-1. Access values by key-name
-1. Add Object Properties
-1. Change Object Properties
-1. Explain why we use an object instead of an array
-1. Manipulate objects and arrays declared as `const`
-1. List common errors made with objects
-1. Use object properties with conditionals
+2. Store key-value pairs inside an object
+3. Access values by key-name
+4. Add Object Properties
+5. Change Object Properties
+6. Explain why we use an object instead of an array
+7. Manipulate objects and arrays declared as `const`
+8. List common errors made with objects
+9. Use object properties with conditionals
 
 ## Explain the difference between arrays and objects
 
@@ -40,8 +41,8 @@ Arrays are a **data structure**. We use them to organize our data: in the case o
 
 - We can use arrays to store multiple pieces of data as a sequential list:
 
-```javascript
-const vehicle = ['blue', 4000, 1989]
+```js
+const car = ['blue', 4000, 1989]
 ```
 
 - Each element has a corresponding index (or place), in sequence.
@@ -56,7 +57,7 @@ But with the array above, we don't know what the values mean. Does "blue" refer 
 
 Key-value pair syntax:
 
-```javascript
+```js
 const car = {
   color: 'blue',
   hp: 4000,
@@ -70,7 +71,7 @@ const car = {
 
 We can console.log the entire object:
 
-```javascript
+```js
 console.log(car)
 ```
 
@@ -78,31 +79,30 @@ console.log(car)
 
 We can access the values stored in key using dot notation:
 
-```javascript
+```js
 console.log(car.color)
 ```
 
 ## DIFFERENCES BETWEEN ARRAYS AND OBJECTS
 
-- Arrays are declared using the square brackets ` var arr = [];`
-- Objects are declared using the curly braces `var obj = {}`
+- Arrays are declared using the square brackets `const arr = []`
+- Objects are declared using the curly braces `const obj = {}`
 
-Objects contain _key-value pairs_. They are are the **properties** of the object
+Objects contain _key-value pairs_. They are are the **properties** of the object.
 
-A **key** is like an **index** in an array, but it has
-
+A **key** is like an **index** in an array, but it has:
 - a name
 - it is unique
 
 A key is really a string but we can omit the quotes.
 
-A **value** is what a key _refers to_, and can be any datatype.
+A **value** is what a key _refers to_, and can be *any* datatype.
 
 ## Add Object Properties
 
 You can easily add more properties to a previously declared object:
 
-```javascript
+```js
 const house = {
   doors: 9
 }
@@ -114,13 +114,13 @@ console.log(house)
 
 Add properties to the `house` object by simply adding a key using dot notation and the value using an equals `=`. Our house has no windows. Let's add some in _without_ writing them straight into the object:
 
-```javascript
+```js
 house.windows = 30
 ```
 
 When we do it this way, the `windows` key is added to the object.
 
-```javascript
+```js
 console.log(house)
 ```
 
@@ -128,7 +128,7 @@ console.log(house)
 
 Add another property `hasGarden`:
 
-```javascript
+```js
 house.hasGarden = true
 ```
 
@@ -136,17 +136,17 @@ house.hasGarden = true
 
 Changing the value of an existing key has the same syntax as creating a new key-value pair:
 
-```javascript
-const bicycle = {
-  isATricycle: false
+```js
+const recipe = {
+  isYummy: false
 }
 ```
 
-```javascript
-bicycle.isATricycle = true
+```js
+recipe.isYummy = true
 ```
 
-## Explain why we use an object instead of an array
+## Why We Use An Object Instead of an Array
 
 When designing your programs, it is up to you to **choose** how to model your data. We can represent real-life things with our datatypes, but it's a matter of choosing the appropriate datatypes.
 
@@ -158,137 +158,144 @@ Using what we know about datatypes so far, which datatype would we use to model:
 
 1. The name of your cat
 2. The age of your cat
-3. Your cat's favorite things
-4. Whether your cat can speak French
-5. Whether your cat can solve a Rubik's cube
-6. Your cat
+3. A list of your cat's favorite things
+4. Whether your cat is asleep
+5. Your cat
 
 ## Manipulate objects and arrays declared as `const`
 
-`const` only prevents you from reassigning a variable, it doesn't prevent you from adding or changing elements of arrays or properties of objects.
+`const` only prevents you from reassigning a variable; it doesn't prevent you from adding or changing elements of arrays or properties of objects.
 
 You can do this:
 
-```javascript
-const mogwai = {}
+```js
+const cat = {}
 
-mogwai.name = 'Gizmo'
+cat.name = 'Gizmo'
 ```
 
 Cannot do this:
 
-```javascript
-const mogwai = {}
+```js
+const cat = {}
 
-mogwai = { name: 'Gizmo' }
+cat = { name: 'Gizmo' }
 ```
 
 ## List common errors made with objects
 
 ### Unique Keys
 
-It just makes sense that keys ought to be unique within an object. Values, however, can be whatever.
+It just makes sense that keys ought to be unique within an object. Values, however, can be repeated.
 
-An object can not have more than one key with the same name. If it does, the value will default to the last key with the same name, and the prior properties will be excluded on creation.
+An object cannot have more than one key with the same name. If it does, the value will default to the last key with the same name, and the prior properties will be excluded on creation.
 
-```javascript
+```js
 const borough = {
   name: 'Brooklyn',
   name: 'The Bronx'
 }
 ```
 
-```javascript
-console.log(borough);
+```js
+console.log(borough)
 
-=> Object { name: "The Bronx" }
+=> { name: "The Bronx" }
 ```
 
-Conclusion: keys should be unique within an object. Values, however, are not unique.
+Conclusion: keys should be unique within an object. Values, however, do not have to be unique.
 
 ### Accessing and Naming Keys Using Brackets and Quotes
 
 You can create and access any key with square brackets and quotes.
 
-```javascript
-const goblin = { badGuy: true }
+```js
+const goblin = { 
+  badGuy: true
+}
 ```
 
-```javascript
-console.log(goblin['badGuy']);
+```js
+console.log(goblin['badGuy'])
+
 => true
 ```
 
-With square brackets and quotes, you can make key names with spaces and special characters, because the key is _coerced_ into a string. _But_ you then have to access the value from here on out with square brackets and quotes.
+With square brackets and quotes, you can make key names with spaces and special characters, because the key is _coerced_ into a string. _But_, you then have to access the value from here on out with square brackets and quotes.
 
-```javascript
+```js
 const strangeObj = {}
 
-strangeObj['a key with spaces'] = 999;
+strangeObj['a key with spaces'] = 999
 
 console.log(strangeObj)
-=> Object { 'a key with spaces': 999 }
+
+=> { 'a key with spaces': 999 }
 ```
 
 You would need also to access that key with the square brackets and quotes:
 
-```javascript
+```js
 console.log(strangeObj['a key with spaces'])
 
 => 999
 ```
 
-You could not access that key using dot notation.
+You could not access that key using dot notation. The spaces prevent that from being possible.
 
 Square brackets are nice if you need to programmatically generate a key name:
 
-```javascript
+```js
 const obj = {}
+
 for (let i = 0; i < 10; i++) {
-  obj['key' + i] = 'foo'
+  obj['key' + i] = 'some value'
 }
+
 console.log(obj)
 ```
 
 ### Keys That Are Numbers
 
-If a key is just a number, that number will be coerced into a string, which is fine.
+If a key is just a number, that number will be *coerced* into a string, which is fine.
 
-```javascript
+```js
 const obj = {
   1: 'one'
 }
 ```
 
-```javascript
-console.log(obj);
-=> Object { '1': 'one' }
+```js
+console.log(obj)
+
+=> { '1': 'one' }
 ```
 
 But, you cannot access, add, or change numbered keys with dot notation.
 
-```javascript
+```js
 console.log(obj.1)
 ```
 
-```javascript
+```js
 obj.2 = "hey"
 
-console.log(obj2);
+console.log(obj.2)
 ```
 
-There is another way to access key-values using square brackets and quotes `obj['1']`
+This is another situation where accessing key-values using square brackets and quotes is helpful: `obj['1']`
 
 ## Use object properties with conditionals
 
-You can use object properties with conditionals, loops, etc
+You can use object properties with conditionals, loops, etc...
 
-```javascript
+```js
 const obj = {
-  whatevs: 'hi',
+  text: 'hi',
   count: 4
 }
-if (obj.whatevs == 'hi') {
+
+if (obj.text == 'hi') {
   console.log('ok')
 }
 
@@ -299,26 +306,27 @@ for (let i = 0; i < obj.count; i++) {
 
 You can test to see if a property exists on an object:
 
-```javascript
-const obj = {
-  something: 'wuttt'
+```js
+const saturn = {
+  hasRings: true
 }
 
-if (obj.something) {
-  console.log('ok')
+if (saturn.hasRings) {
+  console.log('This key exists within the object')
 }
-if (obj.anotherthing) {
-  console.log('ok')
+
+if (saturn.isSafe) {
+  console.log('This key exists within the object')
 } else {
-  console.log('no go')
+  console.log('This key does not exist within the object')
 }
 ```
 
-This is because accessing a property that doesn't exist on an object gives you `undefined` which is treated as `false`.
+This is because accessing a property that doesn't exist on an object gives you `undefined` which is a `falsy` value.
 
 ## Lesson Recap
 
-We will use objects in JavaScript every day, and you will have plenty of time to practice creating and using objects in Javascript. There are a lot of resources available on the web for you to dive deeper, but the most detailed and understandable one is probably MDN.
+We will use objects in JavaScript every day, and you will have plenty of time to practice creating and using them. There are a lot of resources available on the web for you to dive deeper, but the most detailed and understandable one is probably [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
 
 ## Resources
 
